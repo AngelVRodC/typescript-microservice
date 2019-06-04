@@ -26,4 +26,11 @@ export class User extends BaseClass {
   @Column('varchar')
   public phone: string;
 
+  constructor(name: string, email: string, phone: string) {
+    super();
+    this.name = name;
+    this.email = email;
+    this.phone = phone;
+  }
+
 }
