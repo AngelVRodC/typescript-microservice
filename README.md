@@ -37,7 +37,7 @@ https://download.docker.com/mac/stable/Docker.dmg
   "synchronize": false,
   "logging": false,
   "entities": [
-    "./src/entities/**/*.ts"
+    "./src/models/**/*.ts"
   ],
   "subscribers": [
     "./src/subscribers/**/*.ts"
@@ -46,7 +46,7 @@ https://download.docker.com/mac/stable/Docker.dmg
     "./src/migrations/**/*.ts"
   ],
   "cli": {
-    "entitiesDir": "./src/entities",
+    "entitiesDir": "./src/models",
     "migrationsDir": "./src/migrations",
     "subscribersDir": "./src/subscribers"
   }
