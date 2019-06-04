@@ -1,6 +1,8 @@
 import { IsDefined, IsEmail, IsPhoneNumber, IsString, Length } from 'class-validator';
 import { Column, Entity } from 'typeorm';
+import { IUser } from '../interfaces/';
 import { BaseClass } from './base';
+
 
 
 /**
@@ -26,11 +28,19 @@ export class User extends BaseClass {
   @Column('varchar')
   public phone: string;
 
-  constructor(name: string, email: string, phone: string) {
+  constructor(user: IUser) {
     super();
-    this.name = name;
-    this.email = email;
-    this.phone = phone;
+    this.name = user.name;
+    this.email = user.email;
+    this.phone = user.phone;
+  }
+
+  public toJSON(): IUser {
+    return {
+      name: this.name,
+      email: this.email,
+      phone: this.phone
+    }
   }
 
 }

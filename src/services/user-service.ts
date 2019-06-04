@@ -1,4 +1,5 @@
 import { getRepository, Repository } from 'typeorm';
+import { IUser } from '../interfaces';
 import { User } from '../models/user';
 
 
@@ -23,18 +24,18 @@ export class UserService {
     return this.userRepository.find();
   }
 
-  public create = async (name: string, email: string, phone: string): Promise<User> => {
-    const user = new User(name,email,phone);
+  public create = async (newUser: IUser): Promise<User> => {
+    const user = new User(newUser);
 
     return user.save();
   }
 
-  public update = async (id: number, name: string, email: string, phone: string): Promise<User> => {
+  public update = async (id: number, newUser: IUser): Promise<User> => {
     try {
       const user = await this.userRepository.findOneOrFail(id);
-      user.name = name;
-      user.email = email;
-      user.phone = phone; 
+      user.name = newUser.name;
+      user.email = newUser.email;
+      user.phone = newUser.phone; 
 
       return user.save();
 
