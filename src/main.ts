@@ -1,10 +1,12 @@
 
+import * as cors from "cors";
 import * as express from 'express';
 import { Connection } from 'typeorm';
 import { createDatabaseConnection, healthCheck } from './config';
 
 
 const server = express();
+server.use(cors);
 server.get(`health-check/`,healthCheck);
 
   async function main() {
