@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "lib": ["es2017", "dom"],
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "target": "es2015",
+    "resolveJsonModule": true,
+    "experimentalDecorators": true
+  },
+  "sourceRoot": "src",
+  "typeRoots": [
+    "node_module/@types"
+  ],
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ]
+}
